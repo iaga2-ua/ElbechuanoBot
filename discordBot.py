@@ -26,6 +26,8 @@ async def play(ctx, *, url):
     if voice_client is None:
         voice_client = await channel.connect()
 
+    ydl_opts = {'format': 'bestaudio', 'verbose': True}
+
     ydl_opts = {'format': 'bestaudio'}
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=False)
