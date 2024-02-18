@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import json
 import random
-import youtube_dl
+import yt_dlp
 
 # Configuración
 with open('config.json', 'r') as config_file:
@@ -26,10 +26,14 @@ async def play(ctx, *, url):
     if voice_client is None:
         voice_client = await channel.connect()
 
-    ydl_opts = {'format': 'bestaudio', 'verbose': True}
+    ydl_opts = {
+        'format': 'bestaudio',
+        'extractaudio': True,
+        'audioformat': 'mp3',
+        'outtmpl': '%(id)s.mp3',
+    }
 
-    ydl_opts = {'format': 'bestaudio'}
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=False)
         url2 = info['formats'][0]['url']
         voice_client.play(discord.FFmpegPCMAudio(url2))
