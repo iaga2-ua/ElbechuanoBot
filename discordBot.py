@@ -4,7 +4,7 @@ import json
 import youtube_dl
 import random
 
-# Leer la configuración desde config.json
+#Config
 with open('config.json', 'r') as config_file:
     config = json.load(config_file)
     TOKEN = config['token']
@@ -15,7 +15,7 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix=PREFIX, intents=intents)
 
-# Configura el reproductor de audio
+#Commands
 class Music(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -41,7 +41,6 @@ class Music(commands.Cog):
             voice_client.stop()
             await ctx.send("La música ha sido detenida.")
 
-# Comandos adicionales
 @bot.command()
 async def frases(ctx):
     canal_id = 451431438143717416
@@ -63,5 +62,5 @@ async def on_ready():
 
 bot.add_cog(Music(bot))
 
-# Se inicia el bot
+#Start Bot
 bot.run(TOKEN)
