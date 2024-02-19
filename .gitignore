@@ -1,2 +1,6 @@
-# Ejecutables .exe
-/ElbechuanoBot/FFmpeg/bin/
+# Extensiones
+*.log
+*.zip
+*.rar
+*.gz
+*.exe
