@@ -21,7 +21,7 @@ git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
 
 ## Uso 🚀
 
-Actualmente, ElBechuanoBot tiene un total de cuatro funcionalidades, que son las siguienters:
+Actualmente, ElBechuanoBot tiene un total de cuatro funcionalidades, que son las siguientes:
 
 1ro. Muestra un mensaje aleatorio tomado del canal que definamos del servidor de Discord.
 ```
