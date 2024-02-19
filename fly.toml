@@ -10,4 +10,3 @@ kill_timeout = 5
 processes = []
 
 [env]
-ffmpeg="FFmpeg/bin:${PATH}"
