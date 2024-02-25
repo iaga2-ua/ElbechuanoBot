@@ -13,6 +13,7 @@ with open('config.json', 'r') as config_file:
 # Configurar intents
 intents = discord.Intents.default()
 intents.message_content = True
+intents.voice_states = True
 
 # Crear bot
 bot = commands.Bot(command_prefix=PREFIX, intents=intents)
