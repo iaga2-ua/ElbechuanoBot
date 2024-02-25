@@ -12,7 +12,7 @@ Para poder trabajar con ElBechuanoBot, debemos tener en cuenta los siguientes re
 
 ## Requisitos de instalación 🔧
 
-Tras clonar el repositorio, en el directorio 'ElbechuanoBot\FFmpeg\bin' deben haber tres ejecutables .exe los cuales deberán añadirse manualmente, estos som **ffmpeg.exe**, **ffplay.exe** y **ffprobe.exe**.
+Tras clonar el repositorio, en el directorio 'ElbechuanoBot\FFmpeg\bin' deben haber tres ejecutables .exe los cuales deberán añadirse manualmente, estos son **ffmpeg.exe**, **ffplay.exe** y **ffprobe.exe**.
 
 En caso de no tenerlos descargados en nuestro equipo local, podemos descargarlos desde la web oficial de [ffmpeg](https://ffmpeg.org/download.html). También, podemos clonar su repositorio.
 ```
