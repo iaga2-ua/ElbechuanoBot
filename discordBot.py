@@ -40,7 +40,7 @@ async def play(ctx, *, url):
             url2 = info['formats'][0]['url']
             voice_client.play(discord.FFmpegPCMAudio(url2))
     except Exception as e:
-        await ctx.send(f"Ocurrió un error al reproducir la música: {
+        await ctx.send(f"Ocurrió un error al reproducir la música: {e}")
 
 # Comandos adicionales
 @bot.command()
