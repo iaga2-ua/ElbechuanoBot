@@ -21,23 +21,26 @@ bot = commands.Bot(command_prefix=PREFIX, intents=intents)
 # Comando para reproducir música
 @bot.command()
 async def play(ctx, *, url):
-    channel = ctx.author.voice.channel
-    voice_client = discord.utils.get(bot.voice_clients, guild=ctx.guild)
+    try:
+        channel = ctx.author.voice.channel
+        voice_client = discord.utils.get(bot.voice_clients, guild=ctx.guild)
 
-    if voice_client is None:
-        voice_client = await channel.connect()
+        if voice_client is None:
+            voice_client = await channel.connect()
 
-    ydl_opts = {
-        'format': 'bestaudio',
-        'extractaudio': True,
-        'audioformat': 'mp3',
-        'outtmpl': '%(id)s.mp3',
-    }
+        ydl_opts = {
+            'format': 'bestaudio',
+            'extractaudio': True,
+            'audioformat': 'mp3',
+            'outtmpl': '%(id)s.mp3',
+        }
 
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        info = ydl.extract_info(url, download=False)
-        url2 = info['formats'][0]['url']
-        voice_client.play(discord.FFmpegPCMAudio(url2))
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(url, download=False)
+            url2 = info['formats'][0]['url']
+            voice_client.play(discord.FFmpegPCMAudio(url2))
+    except Exception as e:
+        await ctx.send(f"Ocurrió un error al reproducir la música: {
 
 # Comandos adicionales
 @bot.command()
