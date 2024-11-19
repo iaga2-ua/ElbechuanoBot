@@ -1,8 +1,14 @@
 import discord
 import random
 from discord.ext import commands
+from dotenv import load_dotenv
+import os
 
-TOKEN = 'MTAwOTk2MDIyOTQyMjc2NDE5NA.GmmzZR.BsoHgGIXNy6XmPRj3HUMRnmGRURtJ_R7ETPUp8'
+# Cargar las variables del archivo .env
+load_dotenv()
+
+# Obtener el token
+TOKEN = os.getenv('TOKEN')
 
 intents = discord.Intents.default()
 intents.message_content = True
