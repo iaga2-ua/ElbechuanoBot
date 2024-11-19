@@ -1,2 +1,2 @@
 # ElBechuanoBot
-Bot oficial del servidor Aventuras penepollenses
+Bot oficial del servidor de discord.
